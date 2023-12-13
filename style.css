@@ -1,0 +1,1194 @@
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('fonts/RobotoMono-Thin.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: 'RobotoMono';
+    src: url('fonts/RobotoMono-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'RobotoMono';
+    src: url('fonts/RobotoMono-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'RacingSans';
+    src: url('fonts/RacingSansOne-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: RobotoMono;
+    background-color: black;
+    margin: 0;
+}
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    header{
+        background-color: black;
+        color: white;
+        display: block;
+    }
+    header nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header img{
+        width: 30%;
+    }
+    /* nav ul{
+        display: none;
+    } */
+    .menuButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background-color: rgb(65, 65, 65);
+        border: 0;
+        color: white;
+        cursor: pointer;
+        margin-top: 2em;
+        border-radius: 5px;
+    }
+    /* Se le quita el borde azul cuando se pulsa en Chrome */
+    .menuButton:focus {
+        outline: none;
+    }
+    /* Cuando es pulsado, se quita el translate que lo ocultaba */
+    .menuButton:focus + #navegation {
+        transform: translateX(0rem);
+    }
+    /* Se posiciona y se oculta con translate */
+    nav#navegation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 15rem;
+        background-color: rgb(65, 65, 65);
+        transform: translateX(15rem);
+        transition: 1s all;
+    }
+    /* Estilos sencillos para decorar los links */
+    nav#navegation ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    nav#navegation a {
+        display: block;
+        color: white;
+        padding: 1rem;
+        transition: .5s all;
+    }
+    nav#navegation a:hover {
+        text-decoration: none;
+        background-color: rgb(104, 104, 104);
+    }
+    /* main */
+    main{
+        color: white;
+    }
+    /* primer div */
+    div.principal-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./img/principal-image2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+        margin-bottom: 5em;
+    }
+    div.principal-image h1{
+        font-family: RacingSans;
+        text-decoration: underline;
+        text-shadow: 5px 3px 5px black;
+    }
+    /* div sobrenosotros */
+    div#SobreNosotros{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40% 60%;
+        margin-bottom: 5em;
+    }
+    div#SobreNosotros img{
+        margin: 0 auto;
+        height: auto;
+        width: 80%;
+    }
+    div#SobreNosotros p{
+        padding: 0.2em 0.5em;
+    }
+    div#SobreNosotros p span{
+        font-family: RacingSans;
+        text-decoration: underline;
+    }
+    /* div servicios */
+    div#Servicios{
+        background-color: rgb(65, 65, 65);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    div#Servicios .servicio{
+        margin: 1em auto;
+        background-color: rgb(43, 43, 43);
+        width: 80%;
+        padding: 1em 0.2em;
+        border-radius: 15px;
+    }
+    div#Servicios .servicio:hover{
+        box-shadow: 5px 5px 5px black;
+        text-decoration: underline;
+    }
+    div#Servicios .servicio span{
+        font-size: 3em;
+    }
+    /* div testimonios */
+    div#Testimonios{
+        margin: 5em 1em;
+        display: flex;
+        flex-direction: column;
+    }
+    div#Testimonios .testimonio{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0;
+        background-color: rgb(43, 43, 43);
+        border-radius: 10px;
+        padding: 0 1em;
+    }
+    div#Testimonios .testimonio div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div#Testimonios .testimonio div:first-child{
+        font-family: RacingSans;
+        font-size: 25px;
+    }
+    div#Testimonios .testimonio div .testimonio-valoracion span{
+        color: gold;
+    }
+    /* div contacto */
+    div#Contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto h2{
+        font-family: RacingSans;
+    }
+    div#Contacto #form{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto #form input, div#Contacto #form textarea{
+        width: 100%;
+        margin: 1em 0;
+        border: 0;
+        border-radius: 5px;
+    }
+    div#Contacto #form input{
+        padding: 0.3em 0.2em;
+    }
+    div#Contacto #form button{
+        width: 50%;
+        padding: 0.5em 0;
+        font-size: 1em;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        border: 0;
+        border-radius: 7px;
+    }
+    div#Contacto #form button:active{
+        background-color: rgb(43, 43, 43);
+        color: white;
+    }
+
+    /* footer */
+    footer{
+        margin-top: 5em;
+        padding: 1em 0;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer h3{
+        text-decoration: underline;
+    }
+    div#localizacion, div#contact, div#redesSociales{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div a{
+        text-decoration: none;
+        display: flex;
+    }
+    div#redesSociales div a svg{
+        margin: auto;
+        height: auto;
+        width: 60%;
+    }
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    header{
+        background-color: black;
+        color: white;
+        display: block;
+    }
+    header nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header img{
+        width: 30%;
+    }
+    /* nav ul{
+        display: none;
+    } */
+    .menuButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background-color: rgb(65, 65, 65);
+        border: 0;
+        color: white;
+        cursor: pointer;
+        margin-top: 2em;
+        border-radius: 5px;
+    }
+    /* Se le quita el borde azul cuando se pulsa en Chrome */
+    .menuButton:focus {
+        outline: none;
+    }
+    /* Cuando es pulsado, se quita el translate que lo ocultaba */
+    .menuButton:focus + #navegation {
+        transform: translateX(0rem);
+    }
+    /* Se posiciona y se oculta con translate */
+    nav#navegation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 15rem;
+        background-color: rgb(65, 65, 65);
+        transform: translateX(15rem);
+        transition: 1s all;
+    }
+    /* Estilos sencillos para decorar los links */
+    nav#navegation ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    nav#navegation a {
+        display: block;
+        color: white;
+        padding: 1rem;
+        transition: .5s all;
+    }
+    nav#navegation a:hover {
+        text-decoration: none;
+        background-color: rgb(104, 104, 104);
+    }
+    /* main */
+    main{
+        color: white;
+    }
+    /* primer div */
+    div.principal-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./img/principal-image2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+        margin-bottom: 5em;
+    }
+    div.principal-image h1{
+        font-family: RacingSans;
+        text-decoration: underline;
+        text-shadow: 5px 3px 5px black;
+    }
+    /* div sobrenosotros */
+    div#SobreNosotros{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40% 60%;
+        margin-bottom: 5em;
+    }
+    div#SobreNosotros img{
+        margin: 0 auto;
+        height: auto;
+        width: 80%;
+    }
+    div#SobreNosotros p{
+        padding: 0.2em 0.5em;
+    }
+    div#SobreNosotros p span{
+        font-family: RacingSans;
+        text-decoration: underline;
+    }
+    /* div servicios */
+    div#Servicios{
+        background-color: rgb(65, 65, 65);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    div#Servicios .servicio{
+        margin: 1em auto;
+        background-color: rgb(43, 43, 43);
+        width: 80%;
+        padding: 1em 0.2em;
+        border-radius: 15px;
+    }
+    div#Servicios .servicio:hover{
+        box-shadow: 5px 5px 5px black;
+        text-decoration: underline;
+    }
+    div#Servicios .servicio span{
+        font-size: 3em;
+    }
+    /* div testimonios */
+    div#Testimonios{
+        margin: 5em 1em;
+        display: flex;
+        flex-direction: column;
+    }
+    div#Testimonios .testimonio{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0;
+        background-color: rgb(43, 43, 43);
+        border-radius: 10px;
+        padding: 0 1em;
+    }
+    div#Testimonios .testimonio div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div#Testimonios .testimonio div:first-child{
+        font-family: RacingSans;
+        font-size: 25px;
+    }
+    div#Testimonios .testimonio div .testimonio-valoracion span{
+        color: gold;
+    }
+    /* div contacto */
+    div#Contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto h2{
+        font-family: RacingSans;
+    }
+    div#Contacto #form{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto #form input, div#Contacto #form textarea{
+        width: 100%;
+        margin: 1em 0;
+        border: 0;
+        border-radius: 5px;
+    }
+    div#Contacto #form input{
+        padding: 0.3em 0.2em;
+    }
+    div#Contacto #form button{
+        width: 50%;
+        padding: 0.5em 0;
+        font-size: 1em;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        border: 0;
+        border-radius: 7px;
+    }
+    div#Contacto #form button:active{
+        background-color: rgb(43, 43, 43);
+        color: white;
+    }
+
+    /* footer */
+    footer{
+        margin-top: 5em;
+        padding: 1em 0;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer h3{
+        text-decoration: underline;
+    }
+    div#localizacion, div#contact, div#redesSociales{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div a{
+        text-decoration: none;
+        display: flex;
+    }
+    div#redesSociales div a svg{
+        margin: auto;
+        height: auto;
+        width: 60%;
+    }
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    header{
+        background-color: black;
+        color: white;
+        display: block;
+    }
+    header nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header img{
+        width: 30%;
+    }
+    /* nav ul{
+        display: none;
+    } */
+    .menuButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background-color: rgb(65, 65, 65);
+        border: 0;
+        color: white;
+        cursor: pointer;
+        margin-top: 2em;
+        border-radius: 5px;
+    }
+    /* Se le quita el borde azul cuando se pulsa en Chrome */
+    .menuButton:focus {
+        outline: none;
+    }
+    /* Cuando es pulsado, se quita el translate que lo ocultaba */
+    .menuButton:focus + #navegation {
+        transform: translateX(0rem);
+    }
+    /* Se posiciona y se oculta con translate */
+    nav#navegation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 15rem;
+        background-color: rgb(65, 65, 65);
+        transform: translateX(15rem);
+        transition: 1s all;
+    }
+    /* Estilos sencillos para decorar los links */
+    nav#navegation ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    nav#navegation a {
+        display: block;
+        color: white;
+        padding: 1rem;
+        transition: .5s all;
+    }
+    nav#navegation a:hover {
+        text-decoration: none;
+        background-color: rgb(104, 104, 104);
+    }
+    /* main */
+    main{
+        color: white;
+    }
+    /* primer div */
+    div.principal-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./img/principal-image2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+        margin-bottom: 5em;
+    }
+    div.principal-image h1{
+        font-family: RacingSans;
+        text-decoration: underline;
+        text-shadow: 5px 3px 5px black;
+    }
+    /* div sobrenosotros */
+    div#SobreNosotros{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40% 60%;
+        margin-bottom: 5em;
+    }
+    div#SobreNosotros img{
+        margin: 0 auto;
+        height: auto;
+        width: 80%;
+    }
+    div#SobreNosotros p{
+        padding: 0.2em 0.5em;
+    }
+    div#SobreNosotros p span{
+        font-family: RacingSans;
+        text-decoration: underline;
+    }
+    /* div servicios */
+    div#Servicios{
+        background-color: rgb(65, 65, 65);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    div#Servicios .servicio{
+        margin: 1em auto;
+        background-color: rgb(43, 43, 43);
+        width: 80%;
+        padding: 1em 0.2em;
+        border-radius: 15px;
+    }
+    div#Servicios .servicio:hover{
+        box-shadow: 5px 5px 5px black;
+        text-decoration: underline;
+    }
+    div#Servicios .servicio span{
+        font-size: 3em;
+    }
+    /* div testimonios */
+    div#Testimonios{
+        margin: 5em 1em;
+        display: flex;
+        flex-direction: column;
+    }
+    div#Testimonios .testimonio{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0;
+        background-color: rgb(43, 43, 43);
+        border-radius: 10px;
+        padding: 0 1em;
+    }
+    div#Testimonios .testimonio div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div#Testimonios .testimonio div:first-child{
+        font-family: RacingSans;
+        font-size: 25px;
+    }
+    div#Testimonios .testimonio div .testimonio-valoracion span{
+        color: gold;
+    }
+    /* div contacto */
+    div#Contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto h2{
+        font-family: RacingSans;
+    }
+    div#Contacto #form{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto #form input, div#Contacto #form textarea{
+        width: 100%;
+        margin: 1em 0;
+        border: 0;
+        border-radius: 5px;
+    }
+    div#Contacto #form input{
+        padding: 0.3em 0.2em;
+    }
+    div#Contacto #form button{
+        width: 50%;
+        padding: 0.5em 0;
+        font-size: 1em;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        border: 0;
+        border-radius: 7px;
+    }
+    div#Contacto #form button:active{
+        background-color: rgb(43, 43, 43);
+        color: white;
+    }
+
+    /* footer */
+    footer{
+        margin-top: 5em;
+        padding: 1em 0;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer h3{
+        text-decoration: underline;
+    }
+    div#localizacion, div#contact, div#redesSociales{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div a{
+        text-decoration: none;
+        display: flex;
+    }
+    div#redesSociales div a svg{
+        margin: auto;
+        height: auto;
+        width: 60%;
+    }
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    header{
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header img{
+        width: 15%;
+    }
+    /* nav ul{
+        display: none;
+    } */
+    .menuButton {
+        display: none;
+    }
+    nav#navegation{
+        position: inherit;
+        background-color: inherit;
+        width: 50%;
+        transform: none;
+        display: flex;
+        justify-content: center;
+    }
+    nav#navegation ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    /* main */
+    main{
+        color: white;
+    }
+    /* primer div */
+    div.principal-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./img/principal-image2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+        margin-bottom: 5em;
+    }
+    div.principal-image h1{
+        font-family: RacingSans;
+        font-size: 3em;
+        text-decoration: underline;
+        text-shadow: 5px 3px 5px black;
+    }
+    /* div sobrenosotros */
+    div#SobreNosotros{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 100%;
+        margin-bottom: 5em;
+    }
+    div#SobreNosotros img{
+        margin: 0 auto;
+        height: auto;
+        width: 70%;
+    }
+    div#SobreNosotros p{
+        padding: 0.2em 2em;
+        font-size: 1.5em;
+    }
+    div#SobreNosotros p span{
+        font-family: RacingSans;
+        text-decoration: underline;
+    }
+    /* div servicios */
+    div#Servicios{
+        background-color: rgb(65, 65, 65);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    div#Servicios h2{
+        font-family: RacingSans;
+        font-size: 2em;
+        text-decoration: underline;
+    }
+    div#Servicios div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    div#Servicios div .servicio{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 1.5em;
+        background-color: rgb(43, 43, 43);
+        width: 80%;
+        padding: 1em 0;
+        border-radius: 15px;
+    }
+    div#Servicios div .servicio:hover{
+        box-shadow: 5px 5px 5px black;
+        text-decoration: underline;
+    }
+    div#Servicios div .servicio span{
+        font-size: 3em;
+    }
+    /* div testimonios */
+    div#Testimonios{
+        width: 60%;
+        margin: 5em auto;
+        display: flex;
+        flex-direction: column;
+    }
+    div#Testimonios h2{
+        text-align: center;
+        font-family: RacingSans;
+        font-size: 2em;
+        text-decoration: underline;
+    }
+    div#Testimonios .testimonio{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0;
+        background-color: rgb(43, 43, 43);
+        border-radius: 10px;
+        padding: 0 1em;
+    }
+    div#Testimonios .testimonio div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div#Testimonios .testimonio div:first-child{
+        font-family: RacingSans;
+        font-size: 25px;
+    }
+    div#Testimonios .testimonio div .testimonio-valoracion span{
+        color: gold;
+    }
+    /* div contacto */
+    div#Contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto h2{
+        text-align: center;
+        font-family: RacingSans;
+        font-size: 2em;
+        text-decoration: underline;
+    }
+    div#Contacto #form{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto #form input, div#Contacto #form textarea{
+        width: 100%;
+        margin: 1em 0;
+        border: 0;
+        border-radius: 5px;
+    }
+    div#Contacto #form input{
+        padding: 0.3em 0.2em;
+    }
+    div#Contacto #form button{
+        width: 50%;
+        padding: 0.5em 0;
+        font-size: 1em;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        border: 0;
+        border-radius: 7px;
+    }
+    div#Contacto #form button:active{
+        background-color: rgb(43, 43, 43);
+        color: white;
+    }
+    div#Contacto #form button:hover{
+        background-color: rgb(43, 43, 43);
+    }
+
+    /* footer */
+    footer{
+        margin-top: 5em;
+        padding: 1em 0;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+    }
+    footer h3{
+        text-decoration: underline;
+    }
+    div#localizacion, div#contact, div#redesSociales{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div a{
+        text-decoration: none;
+        display: flex;
+    }
+    div#redesSociales div a svg{
+        margin: auto;
+        height: auto;
+        width: 60%;
+    }
+}
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    header{
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header img{
+        width: 10%;
+    }
+    /* nav ul{
+        display: none;
+    } */
+    .menuButton {
+        display: none;
+    }
+    nav#navegation{
+        position: inherit;
+        background-color: inherit;
+        width: 50%;
+        transform: none;
+        display: flex;
+        justify-content: center;
+    }
+    nav#navegation ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    /* main */
+    main{
+        color: white;
+    }
+    /* primer div */
+    div.principal-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./img/principal-image2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+        margin-bottom: 5em;
+    }
+    div.principal-image h1{
+        font-family: RacingSans;
+        font-size: 4em;
+        text-decoration: underline;
+        text-shadow: 5px 3px 5px black;
+    }
+    /* div sobrenosotros */
+    div#SobreNosotros{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 100%;
+        margin-bottom: 5em;
+    }
+    div#SobreNosotros img{
+        margin: 0 auto;
+        height: auto;
+        width: 70%;
+    }
+    div#SobreNosotros p{
+        padding: 0.2em 2em;
+        font-size: 1.8em;
+    }
+    div#SobreNosotros p span{
+        font-family: RacingSans;
+        text-decoration: underline;
+    }
+    /* div servicios */
+    div#Servicios{
+        background-color: rgb(65, 65, 65);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    div#Servicios h2{
+        font-family: RacingSans;
+        font-size: 2em;
+        text-decoration: underline;
+    }
+    div#Servicios div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    div#Servicios div .servicio{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 1.5em;
+        background-color: rgb(43, 43, 43);
+        width: 80%;
+        padding: 1em 0;
+        border-radius: 15px;
+    }
+    div#Servicios div .servicio:hover{
+        box-shadow: 5px 5px 5px black;
+        text-decoration: underline;
+    }
+    div#Servicios div .servicio span{
+        font-size: 3em;
+    }
+    /* div testimonios */
+    div#Testimonios{
+        width: 50%;
+        margin: 5em auto;
+        display: flex;
+        flex-direction: column;
+    }
+    div#Testimonios h2{
+        text-align: center;
+        font-family: RacingSans;
+        font-size: 2em;
+        text-decoration: underline;
+    }
+    div#Testimonios .testimonio{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0;
+        background-color: rgb(43, 43, 43);
+        border-radius: 10px;
+        padding: 0 1em;
+    }
+    div#Testimonios .testimonio div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div#Testimonios .testimonio div:first-child{
+        font-family: RacingSans;
+        font-size: 25px;
+    }
+    div#Testimonios .testimonio div .testimonio-valoracion span{
+        color: gold;
+    }
+    /* div contacto */
+    div#Contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto h2{
+        text-align: center;
+        font-family: RacingSans;
+        font-size: 2em;
+        text-decoration: underline;
+    }
+    div#Contacto #form{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#Contacto #form input, div#Contacto #form textarea{
+        width: 100%;
+        margin: 1em 0;
+        border: 0;
+        border-radius: 5px;
+    }
+    div#Contacto #form input{
+        padding: 0.3em 0.2em;
+    }
+    div#Contacto #form button{
+        width: 50%;
+        padding: 0.5em 0;
+        font-size: 1em;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        border: 0;
+        border-radius: 7px;
+    }
+    div#Contacto #form button:active{
+        background-color: rgb(43, 43, 43);
+        color: white;
+    }
+    div#Contacto #form button:hover{
+        background-color: rgb(43, 43, 43);
+    }
+
+    /* footer */
+    footer{
+        margin-top: 5em;
+        padding: 1em 0;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+    }
+    footer h3{
+        text-decoration: underline;
+    }
+    div#localizacion, div#contact, div#redesSociales{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    div#redesSociales div a{
+        text-decoration: none;
+        display: flex;
+    }
+    div#redesSociales div a svg{
+        margin: auto;
+        height: auto;
+        width: 60%;
+    }
+ } 
