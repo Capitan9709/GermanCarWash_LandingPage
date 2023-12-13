@@ -66,6 +66,7 @@ body{
         cursor: pointer;
         margin-top: 2em;
         border-radius: 5px;
+        z-index: 1000;
     }
     /* Se le quita el borde azul cuando se pulsa en Chrome */
     .menuButton:focus {
@@ -126,7 +127,7 @@ body{
     div#SobreNosotros{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 40% 60%;
+        /* grid-template-rows: 40% 60%; */
         margin-bottom: 5em;
     }
     div#SobreNosotros img{
@@ -247,6 +248,10 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+    }
+    div#localizacion iframe{
+        width: 300px;
     }
     div#redesSociales div{
         display: flex;
@@ -358,7 +363,7 @@ body{
     div#SobreNosotros{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 40% 60%;
+        /* grid-template-rows: 40% 60%; */
         margin-bottom: 5em;
     }
     div#SobreNosotros img{
